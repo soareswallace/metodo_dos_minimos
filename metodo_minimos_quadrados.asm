@@ -24,7 +24,7 @@ main:
 	fmulp st1,st0 ;multiplica st1, st0 e empilha o resultado, desimpilhando um deles
 	fld qword[m2] ;empilha m2
 	fld st0 ;empilha o que esta em st0
-	fmulp st1,st0 ;multiplica st1, st0 e empilha o resultado, desimpilhando um deles
+	fmulp st1,st0 ;multiplica st1, st0 e empilha o resultado, desimpilhando st1
 	faddp st1,st0 ;soma st0, st1 e empilha o resultado
 	fsqrt ;tira a raiz do top
 	fst qword[m3] ;empilha m3
