@@ -1,3 +1,8 @@
+;Como compilar no mac
+;nasm -f macho metodo_minimos_quadrados.asm
+;ld -o metodo_minimos_quadrados -e main metodo_minimos_quadrados.o
+;./metodo_minimos_quadrados
+
 SECTION .data 
 	x1 dq 1.0 
 	y1 dq 1.0 
@@ -9,6 +14,8 @@ SECTION .data
 	y4 dq 4.0 
 	x5 dq 5.0 
 	y5 dq 5.0 
+	testex dq 6
+	testey dq 6.5
 SECTION .text
 global  main
 main:
