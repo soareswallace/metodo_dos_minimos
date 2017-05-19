@@ -16,19 +16,24 @@ SECTION .data
 	y5 dq 5.0 
 	testex dq 6
 	testey dq 6.5
+	somatorio_x dq 0.0 ; declarei aqui para previnir que precisacemos maninupular a 
+	somatorio_y dq 0.0 ; pilha sem necessidade
 SECTION .text
 global  main
 main:
-	fld qword[m1] ;empilha m1 
-	fld st0 ; empilha o que esta em st0
-	fmulp st1,st0 ;multiplica st1, st0 e empilha o resultado, desimpilhando um deles
-	fld qword[m2] ;empilha m2
-	fld st0 ;empilha o que esta em st0
-	fmulp st1,st0 ;multiplica st1, st0 e empilha o resultado, desimpilhando st1
-	faddp st1,st0 ;soma st0, st1 e empilha o resultado
-	fsqrt ;tira a raiz do top
-	fst qword[m3] ;empilha m3
-	mov 
+	fld qword[x1] ;empilha x1
+	fld qword[x2] ;empilha x2
+	fld qword[x3] ;empilha x3
+	fld qword[x4] ;empilha x4
+	fld qword[x5] ;empilha x5
+	faddp
+	faddp
+	faddp
+	faddp ; fez o somatorio dos x
+	fst qword [somatorio_x] ; guarda o resultado em meomoria
+	
+
+	fim:
 	mov eax,1
   	mov ebx,0
   	int 80h
