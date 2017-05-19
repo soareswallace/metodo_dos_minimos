@@ -12,11 +12,11 @@ section .text
 main:
     fld qword[r]
     fld qword[r]
-    fmulp st1, st0
+    fmulp
     fld qword[h]
-    fmulp st1, st0
+    fmulp
     fldpi
-    fmulp st1, st0
+    fmulp
     fst qword [resposta]
     push dword [resposta+4]
     push dword [resposta]
