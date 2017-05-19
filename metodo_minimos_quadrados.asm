@@ -31,7 +31,16 @@ main:
 	faddp
 	faddp ; fez o somatorio dos x
 	fst qword [somatorio_x] ; guarda o resultado em meomoria
-	
+	fld qword[y1] ;empilha y1
+	fld qword[y2] ;empilha y2
+	fld qword[y3] ;empilha y3
+	fld qword[y4] ;empilha y4
+	fld qword[y5] ;empilha y5
+	faddp
+	faddp
+	faddp
+	faddp ; fez o somatorio dos y
+	fst qword [somatorio_y] ; guarda o resultado em meomoria
 
 	fim:
 	mov eax,1
